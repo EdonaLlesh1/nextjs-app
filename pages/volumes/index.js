@@ -1,7 +1,17 @@
 import Link from "next/link";
 import { introduction } from "../../lib/data";
+import { useRouter } from "next/router";
+
 
 export default function Volumes() {
+  const router = useRouter();
+  
+  const navigateToRandomVolume = () => {
+    if(confirm("Go to a random volume?")){
+      router.push("/volumes");
+    }
+  };
+
   return (
     <>
       <h1>The Lord of the Rings</h1>
@@ -21,6 +31,8 @@ export default function Volumes() {
           </Link>
         </li>
       </ul>
+      <button type="button"
+      onClick={navigateToRandomVolume}>Random Volume</button>
     </>
   );
 }

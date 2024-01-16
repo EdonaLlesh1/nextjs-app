@@ -19,5 +19,5 @@ const volume = volumes.find((volume) => volume.slug === slug);
     <p>Description: {volume.description}</p>
 
     </>
-   )
+   );
 }
